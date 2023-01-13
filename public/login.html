@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../src/style/login.css" />
+    <link
+      rel="shortcut icon"
+      href="../img/icon/checkenSoul.jpg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="application-name" content="Chicken Soul" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Vinandra Fitriansyah" />
+    <meta
+      name="description"
+      content="E-book media analisis yang dapat digunakan oleh pemilik usaha ayam pedaging untuk referensi, memantau, mengontrol kondisi lingkungan kandang dan kualitas ayam itu sendiri."
+    />
+    <script src="../src/jquery/jquery.js"></script>
+    <title>Chicken Soul | Login</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="form">
+        <div class="title">Login User</div>
+        <form action="input_text" method="post" id="submit">
+          <div class="input-wrap">
+            <label for="input-text">
+              <i class="fa-solid fa-envelope"></i>&nbsp;Email or Username
+            </label>
+            <div class="input-field">
+              <input type="text" class="input" id="input-text" />
+            </div>
+          </div>
+          <div class="input-wrap">
+            <label for="input-text">
+              <i class="fa-solid fa-key"></i>&nbsp;Pasword
+            </label>
+            <div class="input-field">
+              <input type="password" class="input" id="input-pasword" />
+            </div>
+          </div>
+          <div class="input-wrap">
+            <span class="error_msg">
+              Username atau Pasword salah, Ulangi lagi.
+            </span>
+            <input type="submit" value="login" class="btn" id="login_btn" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      var input_text = document.querySelector("#input-text");
+      var input_pasword = document.querySelector("#input-pasword");
+      var error_msg = document.querySelector(".error_msg");
+
+      $("#submit").submit(function (e) {
+        e.preventDefault();
+
+        if (input_text.value.length < 1) {
+          error_msg.style.display = "inline-block";
+          input_text.style.border = "1px solid #f74040";
+          return false;
+        }
+        if (input_pasword.value.length < 1) {
+          error_msg.style.display = "inline-block";
+          input_pasword.style.border = "1px solid #f74040";
+          return false;
+        }
+
+        error_msg.style.display = "none";
+        alert("login berhasil");
+        location.href = "profile.html";
+      });
+    </script>
+  </body>
+</html>
